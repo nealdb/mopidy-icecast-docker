@@ -33,6 +33,7 @@ RUN apt-get purge --auto-remove -y \
        gcc \
        && apt-get clean \
        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache \
+       && mkdir -p /var/lib/mopidy/.config \
        && chown mopidy:audio -R /var/lib/mopidy/.config
 
 COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
